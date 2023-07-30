@@ -1,0 +1,249 @@
+# Metadata for COVID-19 Weekly Stats
+---
+Identifier: '13be64fd-e32b-4743-acd7-5c0870a165b6'
+Name: 'covid-19-stats'
+Title: 'COVID-19 Weekly Stats'
+Description: 'Data on COVID-19 cases'
+Topics:
+  - 'Health'
+Keywords:
+  - 'covid-19'
+  - 'government'
+  - 'healthcare'
+Publisher:
+  Name: 'Ministry of Health'
+  Admin 1:
+    Name: 'MOH'
+    Department: 'CDD'
+    Email: 'moh_singapore@moh.gov.sg'
+Sources:
+  - 'Ministry of Health'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Ad-hoc'
+Coverage: '2020-12-30 to 2023-07-25'
+Last Updated: '2023-07-26T08:51:43.417025'
+Resources:
+  -
+    Identifier: '68289dd4-e9d1-41cf-afe6-b093d04b60af'
+    Title: 'Number of COVID-19 infections by Epi-week'
+    Url: 'https://storage.data.gov.sg/covid-19-stats/resources/number-of-covid-19-infections-by-epi-week-2023-07-26T08-05-26Z.csv'
+    Format: 'CSV'
+    Coverage: '2023-01-01 to 2023-07-22'
+    Last Updated: '2023-07-26T08:05:26.143622'
+    Schema:
+      -
+        Name: 'epi_year'
+        Title: 'Epi year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'epi_week'
+        Title: 'Epi week'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'est_count'
+        Title: 'Est count'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Infections'
+  -
+    Identifier: '37d0d8c2-3445-4d0c-b5d3-b2677acf9e44'
+    Title: 'Number of new COVID-19 hospitalisations / ICU admissions by Epi-week'
+    Url: 'https://storage.data.gov.sg/covid-19-stats/resources/number-of-new-covid-19-hospitalisations-icu-admissions-by-epi-week-2023-07-26T08-07-19Z.csv'
+    Format: 'CSV'
+    Coverage: '2023-01-01 to 2023-07-22'
+    Last Updated: '2023-07-26T08:07:19.644471'
+    Schema:
+      -
+        Name: 'epi_year'
+        Title: 'Epi year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'epi_week'
+        Title: 'Epi week'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'new_admisison_type'
+        Title: 'New admisison type'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'count'
+        Title: 'Count'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Cases'
+  -
+    Identifier: '2589abb7-0588-4fb2-b164-1099fe97ecae'
+    Title: 'Average daily hospitalised / ICU cases by Epi-week'
+    Url: 'https://storage.data.gov.sg/covid-19-stats/resources/average-daily-hospitalised-icu-cases-by-epi-week-2023-07-26T08-09-59Z.csv'
+    Format: 'CSV'
+    Coverage: '2023-01-01 to 2023-07-22'
+    Last Updated: '2023-07-26T08:09:59.807134'
+    Schema:
+      -
+        Name: 'epi_year'
+        Title: 'Epi year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'epi_week'
+        Title: 'Epi week'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'clinical_status'
+        Title: 'Clinical status'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'age_groups'
+        Title: 'Age groups'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'count'
+        Title: 'Count'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Case'
+  -
+    Identifier: '8728a3a8-3725-4e1a-80f0-c06e7e6417c5'
+    Title: 'Progress of COVID-19 vaccination'
+    Url: 'https://storage.data.gov.sg/covid-19-stats/resources/progress-of-covid-19-vaccination-2023-07-26T08-51-42Z.csv'
+    Format: 'CSV'
+    Coverage: '2020-12-30 to 2023-07-25'
+    Last Updated: '2023-07-26T08:51:42.318152'
+    Schema:
+      -
+        Name: 'vacc_date'
+        Title: 'Vacc date'
+        Type: 'datetime'
+        Sub Type: 'date'
+        Format: 'YYYY-MM-DD'
+      -
+        Name: 'received_at_least_one_dose'
+        Title: 'Received at least one dose'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Person'
+      -
+        Name: 'full_regimen'
+        Title: 'Completed primary series'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Person'
+      -
+        Name: 'minimum_protection'
+        Title: 'Has minimum protection'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Person'
+      -
+        Name: 'received_one_dose_pcttakeup'
+        Title: 'Received one dose  (%)'
+        Type: 'numeric'
+        Sub Type: 'percentage'
+        Description: 'Percentages are expressed as a value over 100, i.e. "100" represents
+          100%'
+      -
+        Name: 'full_regimen_pcttakeup'
+        Title: 'Completed primary series (%)'
+        Type: 'numeric'
+        Sub Type: 'percentage'
+        Description: 'Percentages are expressed as a value over 100, i.e. "100" represents
+          100%'
+      -
+        Name: 'minimum_protection_pcttakeup'
+        Title: 'Has minimum protection (%)'
+        Type: 'numeric'
+        Sub Type: 'percentage'
+        Description: 'Percentages are expressed as a value over 100, i.e. "100" represents
+          100%'
+  -
+    Identifier: 'a950ed70-31fd-4b08-bf36-98a1414797c8'
+    Title: 'Vaccination status by age group'
+    Url: 'https://storage.data.gov.sg/covid-19-stats/resources/vaccination-status-by-age-group-2023-07-19T08-18-53Z.csv'
+    Format: 'CSV'
+    Coverage: '2022-09-01 to 2023-07-15'
+    Last Updated: '2023-07-19T08:18:53.469603'
+    Schema:
+      -
+        Name: 'age'
+        Title: 'Age'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'no_minimum_protection'
+        Title: 'No minimum protection'
+        Type: 'numeric'
+        Sub Type: 'percentage'
+        Description: 'Percentages are expressed as a value over 100, i.e. "100" represents
+          100%'
+      -
+        Name: 'minimum_protection'
+        Title: 'Minimum protection'
+        Type: 'numeric'
+        Sub Type: 'percentage'
+        Description: 'Percentages are expressed as a value over 100, i.e. "100" represents
+          100%'
+  -
+    Identifier: 'e22dce8c-9857-49ae-a998-00453a569677'
+    Title: 'Average daily adult ICU bed utilisation by Epi-week'
+    Url: 'https://storage.data.gov.sg/covid-19-stats/resources/average-daily-adult-icu-bed-utilisation-by-epi-week-2023-07-26T08-11-47Z.csv'
+    Format: 'CSV'
+    Coverage: '2023-01-01 to 2023-07-22'
+    Last Updated: '2023-07-26T08:11:47.920480'
+    Schema:
+      -
+        Name: 'epi_year'
+        Title: 'Epi year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'epi_week'
+        Title: 'Epi week'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'status'
+        Title: 'Status'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'count'
+        Title: 'Count'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Beds'
+  -
+    Identifier: '3e3de62d-79f1-4365-bd27-2922a007c152'
+    Title: 'Number of COVID-19 deaths by month'
+    Url: 'https://storage.data.gov.sg/covid-19-stats/resources/number-of-covid-19-deaths-by-month-2023-07-26T08-13-42Z.csv'
+    Format: 'CSV'
+    Coverage: '2023-01-01 to 2023-07-22'
+    Last Updated: '2023-07-26T08:13:42.711031'
+    Schema:
+      -
+        Name: 'as_of_month'
+        Title: 'As of month'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'age_groups'
+        Title: 'Age groups'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'count'
+        Title: 'Count'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Deaths'
