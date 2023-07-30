@@ -15,7 +15,7 @@ class DatabaseMongo:
         )
 
         self.config_parse_ini = read_ini_configuration_from_resource()
-        self.config_parse_ini.set_config_file_ini("database")
+        self.config_parse_ini.get_config_ini_file("database")
         self.client = MongoClient(self.config_parse_ini.get_value_from_section_key(
             section_name=f"MONGO_{environment_name.upper()}",
             key="conn_string"

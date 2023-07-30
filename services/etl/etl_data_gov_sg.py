@@ -13,6 +13,7 @@ class etl_data_gov_sg(etl_Main, ABC):
     def __init__(self, environment_name: str = "DEV"):
         self.list_of_dataset_links = None
         self.dataset_collections_url = None
+
         self.environment_name = environment_name
         self._setup_from_ini_configuration()
 
@@ -20,14 +21,22 @@ class etl_data_gov_sg(etl_Main, ABC):
     def extract(self):
         # self.dataset_collections_url = self._extract_record_from_url()
         self.list_of_dataset_links: List[str] = self._scrap_links_for_resource_ids()
+        self._ini_configuration_update()
 
     # PRIVATE METHOD
     def _setup_from_ini_configuration(self):
         self.config_parse_ini = read_ini_configuration_from_resource()
-        self.config_parse_ini.set_config_file_ini("database")  # Todo : set this to 'url.ini'
+        self.config_parse_ini.get_config_ini_file("database")  # Todo : set this to 'url.ini'
         self.base_url = self.config_parse_ini.get_value_from_section_key(
             section_name=f"MONGO_{self.environment_name.upper()}",
             key="dataset_url_covid19_stats"
+        )
+
+    def _ini_configuration_update(self):
+        self.config_parse_ini.set_config_ini_file_with_details(
+            section_name="MONGO_DEV",
+            key="dataset_url_covid19_stats_resource_ids",
+            value=", ".join(self.list_of_dataset_links)
         )
 
     def _extract_record_from_url(self):
