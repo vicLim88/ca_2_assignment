@@ -3,6 +3,8 @@ import pandas as pd
 import requests
 import json
 
+from services.etl.etl_data_gov_sg import etl_data_gov_sg
+
 
 def service_dao_mongodb(name):
     mongo_db_dev = DatabaseMongo(environment_name="dev")
@@ -20,7 +22,7 @@ def service_ingestion(web_url: str):
     response = session.get(
         url=web_url
     )
-    response_json = response.json()["pageProps"]["allChartData"][0]["rows"]
+    response_json = response.json()
 
     # Pass the response_json to mongoDB
     mongo_db_dev = DatabaseMongo(environment_name="dev")
@@ -33,9 +35,15 @@ def service_ingestion(web_url: str):
     )
 
 
+# def extract_from_
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    # pd.read_csv()
     # service_dao_mongodb('PyCharm')
-    service_ingestion(
-        "https://beta.data.gov.sg/_next/data/luMl8Y-cFHGEd333gPNMi/datasets/522/resources/d_5f9b504acdd7ebc298a974117b490435/view.json?datasetId=522&resourceId=d_5f9b504acdd7ebc298a974117b490435"
-    )
+    # service_ingestion(
+    #     "https://data.gov.sg/api/action/datastore_search?resource_id=68289dd4-e9d1-41cf-afe6-b093d04b60af"
+    # )
+
+    etl = etl_data_gov_sg().extract()
