@@ -40,10 +40,7 @@ def service_ingestion(web_url: str):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # pd.read_csv()
-    # service_dao_mongodb('PyCharm')
-    # service_ingestion(
-    #     "https://data.gov.sg/api/action/datastore_search?resource_id=68289dd4-e9d1-41cf-afe6-b093d04b60af"
-    # )
-
-    etl = etl_data_gov_sg().extract()
+    # Load data into mongodb
+    etl = etl_data_gov_sg()
+    etl.extract()
+    etl.load()
