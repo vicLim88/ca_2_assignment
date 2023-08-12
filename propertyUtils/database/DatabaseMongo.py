@@ -3,6 +3,7 @@ import logging
 from typing import List
 from propertyUtils.config_parser import read_ini_configuration_from_resource
 from pymongo import MongoClient
+import pandas as pd
 
 
 class DatabaseMongo:
@@ -46,7 +47,11 @@ class DatabaseMongo:
         return name_of_database in self.client.list_database_names()
 
     def read_all_documents_from_collection(self, database_name: str, collection_name: str):
+        logging.info(msg=database_name)
         return [document for document in self.client[database_name][collection_name].find()]
 
-    # UPDATE
-    # DELETE
+    def read_all_records(self, database_name: str, collection_name: str) -> pd:
+        return pd.DataFrame.from_records(list(self.client[database_name][collection_name].find({},{'_id': False})))
+
+# UPDATE
+# DELETE
