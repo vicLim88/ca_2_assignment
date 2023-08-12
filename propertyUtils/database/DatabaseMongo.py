@@ -51,7 +51,7 @@ class DatabaseMongo:
         return [document for document in self.client[database_name][collection_name].find()]
 
     def read_all_records(self, database_name: str, collection_name: str) -> pd:
-        return pd.DataFrame.from_records(list(self.client[database_name][collection_name].find({},{'_id': False})))
+        return pd.DataFrame.from_records(list(self.client[database_name][collection_name].find({}, {'_id': False})))
 
 # UPDATE
 # DELETE
