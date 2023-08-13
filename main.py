@@ -1,12 +1,9 @@
-import seaborn as sb
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 from propertyUtils.database import DatabaseMongo
 from services.etl.etl_data_gov_sg import etl_data_gov_sg
-from scipy import stats
 
 
 def add_leading_zero(age_range: str):
@@ -40,14 +37,14 @@ if __name__ == '__main__':
     # pie_chart.set_title('Number of Covid Death by age group')
     # plt.show()
 
-    # Step_3_setup_scatter_plot_to_find_out_why_so_many_deaths_are_from_senior
-    # Could be due to high number of counts of seniors who are hospitalized and in icu
-    df_3 = db.read_all_records(database_name=database_name,
-                               collection_name="average-daily-hospitalised-icu-cases-by-epi-week.csv")
-    df_3.boxplot(by="age_groups",
-                 column=["count"])
-    plt.xticks(rotation=45)
-    plt.show()
+    # # Step_3_setup_scatter_plot_to_find_out_why_so_many_deaths_are_from_senior
+    # # Could be due to high number of counts of seniors who are hospitalized and in icu
+    # df_3 = db.read_all_records(database_name=database_name,
+    #                            collection_name="average-daily-hospitalised-icu-cases-by-epi-week.csv")
+    # df_3.boxplot(by="age_groups",
+    #              column=["count"])
+    # plt.xticks(rotation=45)
+    # plt.show()
 
     # For the seniors, there were a substantial amount of outliers as compared to other age groups.
     # I have performed the required query and it turns out that
@@ -63,14 +60,14 @@ if __name__ == '__main__':
     # plt.xticks(rotation=45)
     # plt.show()
 
-    # # Step_5_setup_line_graph_for_progress_of_vaccination()
-    # # Completed primary series = (3 x Pfizer/Novavex); (4 x Sinovac)
-    # df_3 = db.read_all_records(database_name=database_name,
-    #                            collection_name="progress-of-covid-19-vaccination.csv")
-    # df_3.sort_values(by=["vacc_date"]).plot(x="vacc_date",
-    #                                         y=["received_one_dose_pcttakeup",
-    #                                            "full_regimen_pcttakeup",
-    #                                            "minimum_protection_pcttakeup"],
-    #                                         kind="line")
-    # plt.xticks(rotation=45)
-    # plt.show()
+    # Step_5_setup_line_graph_for_progress_of_vaccination()
+    # Completed primary series = (3 x Pfizer/Novavex); (4 x Sinovac)
+    df_3 = db.read_all_records(database_name=database_name,
+                               collection_name="progress-of-covid-19-vaccination.csv")
+    df_3.sort_values(by=["vacc_date"]).plot(x="vacc_date",
+                                            y=["received_one_dose_pcttakeup",
+                                               "full_regimen_pcttakeup",
+                                               "minimum_protection_pcttakeup"],
+                                            kind="line")
+    plt.xticks(rotation=45)
+    plt.show()
